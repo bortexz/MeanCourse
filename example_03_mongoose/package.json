@@ -1,0 +1,9 @@
+{
+  "name": "example_mongoose",
+  "version": "0.0.1",
+  "description": "Mongoose example",
+  "dependencies": {
+    "mongoose": "^3.8.25",
+    "winston": "^0.9.0"
+  }
+}
