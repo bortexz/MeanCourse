@@ -15,10 +15,11 @@ To open a express app, install express with npm and see this simple example.
 Middleware are functions that are executed during a request to our API.
 
 For what?:
-    * Making logs of the requests.
-    * Authentication
-    * Parse headers and body.
-    * Load objects from database.
+
+* Making logs of the requests.
+* Authentication
+* Parse headers and body.
+* Load objects from database.
 
 Example:
 
@@ -65,7 +66,7 @@ For example, if we want to create a new user (aka Register) we would make a rout
 
 For more info, look at these links:
 
-http://expressjs.com/guide/using-middleware.html
-http://expressjs.com/guide/routing.html	
-https://github.com/bithavoc/express-winston
-https://github.com/winstonjs/winston
+- http://expressjs.com/guide/using-middleware.html
+- http://expressjs.com/guide/routing.html
+- https://github.com/bithavoc/express-winston
+- https://github.com/winstonjs/winston
