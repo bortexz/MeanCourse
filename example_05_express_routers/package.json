@@ -1,0 +1,9 @@
+{
+  "name": "example_express_routers",
+  "description": "Example of using routers inside an express app",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "express": "^4.12.3"
+  }
+}
