@@ -38,13 +38,14 @@ router.delete('/:id', function(req, res, next) {
 router.patch('/:id', function(req, res, next) {
   var userId = req.params.id;
   var userData = req.body;
-  Task.findOneAndUpdate({_id: userId}, {$set: userData}, function(err) {
+  Task.update({_id: userId}, {$set: userData}, function(err) {
     if(!err) {
       res.status(200).end();
     }
   });
+
   //alternative:
-  //Task.findOneAndRemove();
+  //Task.findOneAndUpdate();
 });
 
 module.exports = router; //When calling require('tasks'), we get the router.
