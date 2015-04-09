@@ -7,10 +7,10 @@ var app = express();
 app.use(bodyParser.json());
 
 //Import the router of users
-var usersRouter = require('./routes/users');
+var tasksRouter = require('./routes/tasks');
 
 //Use this router for /users/ endpoint.
-app.use('/users', usersRouter);
+app.use('/tasks', tasksRouter);
 
 
 http.createServer(app).listen(8080);

@@ -35,10 +35,10 @@ app.get('/', function(req, res, next) {
 });
 
 //Example of the route that would create a new user.
-app.post('/users', function(req, res, next) {
-  var userData = req.body;
+app.post('/tasks', function(req, res, next) {
+  var taskData = req.body;
   //Here, save it on database, as you have seen on other examples.
-  res.status(200).send(userData);
+  res.status(200).send(taskData);
 });
 
 http.createServer(app).listen(8080);
