@@ -21,10 +21,10 @@ the array of routes that don't need auth (jwt({secret: 'some-secret'}).unless({p
 
 ##Read more about authentication
 ###Module's repos
-https://github.com/auth0/node-jsonwebtoken
-https://www.npmjs.com/package/express-jwt
+* https://github.com/auth0/node-jsonwebtoken
+* https://www.npmjs.com/package/express-jwt
 
 ###Tools and frameworks for complex authentication
-https://github.com/GrumpyWizards/DarkLord
-http://passportjs.org/
-https://auth0.com/
+* https://github.com/GrumpyWizards/DarkLord
+* http://passportjs.org/
+* https://auth0.com/
