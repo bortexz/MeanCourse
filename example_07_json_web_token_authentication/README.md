@@ -9,6 +9,16 @@ Briefly, these are the steps on json web token auth:
 * The resultant string token is sent to the user as a response.
 * This token will be sent on every request to the API, and whatever we encrypted to generate the token, we will have it on req.user object.(This step is done with **express-jwt** module). This way, we can identify the user making the request, also decide if it's has access to this resource in more complex apis (e.g. admin rights).
 
+##About the example
+In this example, we will use the users routes to show how the authentication works.
+
+The important here is where to put the express-jwt middleware. We must define a route to where authentication will be done,
+but sometimes we don't need all the routes to need authentication. The route to authenticate cannot require authentication!
+
+A possible approach is to define all the paths that need authentication on /api/... (/api/users or /api/tasks) adding
+the auth middleware to /api/. Another example could be to define authentication in all routers calling unless() and adding
+the array of routes that don't need auth (jwt({secret: 'some-secret'}).unless({path: [arrayofpaths]})).
+
 ##Read more about authentication
 ###Module's repos
 https://github.com/auth0/node-jsonwebtoken

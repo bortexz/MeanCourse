@@ -1,6 +1,7 @@
 {
   "name": "example_json_web_token_authentication",
   "dependencies": {
+    "body-parser": "^1.12.2",
     "express": "^4.12.3",
     "express-jwt": "^3.0.0",
     "jsonwebtoken": "^5.0.0",
