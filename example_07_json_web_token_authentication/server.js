@@ -3,9 +3,10 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var mongoose = require('mongoose');
 var models = require('./models');
-
+var express_jwt = require('express-jwt');
+var config = require('./config');
 //Mongoose connect to database.
-mongoose.connect('mongodb://localhost/example_07');
+mongoose.connect(config.db_path);
 
 //Initialize models
 models.initialize();
@@ -18,7 +19,7 @@ app.use(bodyParser.json());
 var userRouter = require('./routes/users');
 var authRouter = require('./routes/authentication');
 
-//Use this router for /users/ endpoint.
-//app.use('/tasks', taskRouter);
+app.use('/users',  userRouter);
+app.use('/authenticate', authRouter);
 
 http.createServer(app).listen(8080);

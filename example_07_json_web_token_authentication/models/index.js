@@ -1,4 +1,4 @@
-var models = ['./user.model'];
+var models = ['./user'];
 
 /**
  * Function to initialize all the models, based on an Array.

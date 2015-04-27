@@ -19,6 +19,9 @@ A possible approach is to define all the paths that need authentication on /api/
 the auth middleware to /api/. Another example could be to define authentication in all routers calling unless() and adding
 the array of routes that don't need auth (jwt({secret: 'some-secret'}).unless({path: [arrayofpaths]})).
 
+In this example, the routes that need to be authenticated are all of users unless post /users/ that is a register. So, 
+the middleware is defined in the routes that need it (see routes/users.js).
+
 ##Read more about authentication
 ###Module's repos
 * https://github.com/auth0/node-jsonwebtoken
