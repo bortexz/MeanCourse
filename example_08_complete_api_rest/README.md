@@ -188,4 +188,7 @@ A process manager is a system process that manages the execution process of our 
 + [PM2](https://github.com/Unitech/pm2)
 
 ### HTTP Server
-An http server is the layer that receives the http requests and redirects it to the process listening in localhost. E.G we have the node.js listening on port 8080, but the http port is usually 80. An http server could redirect mydomain.com (on port 80) to localhost:8080 where we have the server listening. 
+An http server is the layer that receives the http requests and redirects it to the process listening in localhost. E.G we have the node.js listening on port 8080, but the http port is usually 80. An http server could redirect mydomain.com (on port 80) to localhost:8080.
+The http server also serves the SSL certificates. Examples of http servers are:
++ [nginx (recommended for node.js)](http://nginx.org/)
++ [Apache HTTP server](http://httpd.apache.org/)
