@@ -13,12 +13,13 @@ Task manager is an API for managing tasks of individual users.
 #### Get token [POST]
 + Request (application/json)
 
-{
-    "username":"albertofer",
-    "password":"12345678"
-}
+        {
+            "username":"albertofer",
+            "password":"12345678"
+        }
 
 + Response (application/json)
+
     {
         "user": {
             "_id": "5544f0e2dbf7ed6c06cdff21",
