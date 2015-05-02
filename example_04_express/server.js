@@ -34,7 +34,7 @@ app.get('/', function(req, res, next) {
   res.status(200).send('Hi from express!')
 });
 
-//Example of the route that would create a new user.
+//Example of the route that would create a new task.
 app.post('/tasks', function(req, res, next) {
   var taskData = req.body;
   //Here, save it on database, as you have seen on other examples.
