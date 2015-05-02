@@ -9,8 +9,28 @@ FORMAT: 1A
 ###Task manager
 Task manager is an API for managing tasks of individual users.
 
-####Authentication
+####Authentication [/authentication]
+#### Get token [POST]
++ Request (application/json)
 
+{
+    "username":"albertofer",
+    "password":"12345678"
+}
+
++ Response (application/json)
+    {
+        "user": {
+            "_id": "5544f0e2dbf7ed6c06cdff21",
+            "username": "albertofer",
+            "tasks": [
+                "5544f661cb41f99206900f22"
+            ],
+            "is_admin": false,
+            "__v": 1
+        },
+        "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NTQ0ZjBlMmRiZjdlZDZjMDZjZGZmMjEiLCJ1c2VybmFtZSI..."
+    }
 ####Users collection [/users]
 #####List All Users [GET]
 + Response 200 (application/json)
