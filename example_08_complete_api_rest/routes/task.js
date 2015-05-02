@@ -41,7 +41,7 @@ taskRouter.delete('/:task_id', function(req, res, next){
         if(err) throw err;
         else {
           //Remove the task from the users list
-          _.pull(user.tasks, task._id.toString());
+          _.pull(user.tasks, task._id);
           user.save(function(err, user) {
             if(err) throw err;
             //Finally, remove the task from database
