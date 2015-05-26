@@ -1,4 +1,4 @@
-<center>![Jedi Logo](http://cursos.jediupc.com/images/logo_jedi.png)</center>
+<center>![Jedi Logo](http://www.fib.upc.edu/img/mobile-apps-lab/logo-jedi.png)</center>
 
 #Welcome to JEDI MEAN Stack course!
 
