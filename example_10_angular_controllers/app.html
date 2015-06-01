@@ -18,7 +18,7 @@
   </ul>
   <form>
     <input type="text" placeholder="New task" ng-model="newTask">
-    <button class="btn btn-info" ng-click="addToList(newTask)">New Task</button>
+    <button class="btn btn-info" ng-click="addToList(newTask); newTask='';">New Task</button>
   </form>
 </div>
 </body>
