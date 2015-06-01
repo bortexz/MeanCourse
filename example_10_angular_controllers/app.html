@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="app.js"></script>
+  <title>AngularJS Controllers</title>
+</head>
+<body ng-app="tasklist">
+<div class="container" ng-controller="TasksController">
+  <h1>Angular controllers - Task List</h1>
+  <ul>
+    <li ng-repeat="task in taskslist track by $index">
+      <span>{{$index}} -> {{task}}</span>
+      <button class="btn btn-danger" ng-click="removeFromList($index)">Remove</button>
+    </li>
+  </ul>
+  <form>
+    <input type="text" placeholder="New task" ng-model="newTask">
+    <button class="btn btn-info" ng-click="addToList(newTask)">New Task</button>
+  </form>
+</div>
+</body>
+</html>
