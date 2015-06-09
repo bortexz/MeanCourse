@@ -111,9 +111,11 @@ To disable the submit button if we have any error, we can use the directive ngDi
 ####Adding error CSS classes
 There's a directive, that is not exclusive for forms, that adds or removes a CSS class. It's ngClass, and has many types of evaluation. The one that it's useful now is evaluating an expression.
 
-    <input type="text" name="myInput" ng-class="{ 'has-error': myNgForm.myInput.$invalid }" >
+    <div class='form-control' ng-class="{ 'has-error': myNgForm.myInput.$invalid }">
+        <input type="text" name="myInput" >
+    </div>
 
-\*has-error is a Bootstrap CSS class that changes the color of the input to red.
+\*has-error is a Bootstrap CSS class that changes the color of the input to red, and it's applied on his div parent with class form-control.
 
 ####Showing messages
 (This resource in only available after angular 1.3) There's a directive to show messages on forms. It's (guess that!) ngMessages.
