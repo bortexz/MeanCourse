@@ -67,6 +67,14 @@ You can also use objects, and use the properties to define the string showed.
 
 You could use group by too. To see more examples of ngOptions go [here](http://odetocode.com/blogs/scott/archive/2013/06/19/using-ngoptions-in-angularjs.aspx) or visit the official docs [here](https://docs.angularjs.org/api/ng/directive/ngOptions).
 
+###Date and time
+In angular, there's also time and date pickers.
+
+It's showed in the example. Take a look to the properties at your own!
+
+- [Time](https://docs.angularjs.org/api/ng/input/input%5Btime%5D)
+- [Date](https://docs.angularjs.org/api/ng/input/input%5Bdate%5D)
+
 ##Submitting form
 There are two ways to submit our form. First one is adding an ng-click directive to a button inside our form
 
@@ -88,7 +96,7 @@ You can validate your values before the value gets copied to it's model into the
 Each field of the form has four values to check if the values are valid or not. To access it, you must name the form and it's fields. Let's take this form:
 
     <form name="myNgForm" novalidate>
-        <input type="text" name="firstName" ng-model="myFormData.firstName" ng-required>
+        <input type="text" name="firstName" ng-model="myFormData.firstName" required>
     </form>
 
 Note the 'novalidate' here. This prevents the HTML5 default validations.

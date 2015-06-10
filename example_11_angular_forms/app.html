@@ -12,49 +12,40 @@
 
   <div class="container" ng-controller="FormController">
     <div class="col-lg-4">
-      <h1>AngularJS Forms</h1>
-      <form name="myForm" novalidate>
-        <div class="form-group" ng-class="{'has-error': myForm.nickname.$dirty && myForm.nickname.$invalid }">
-          <label for="nickname">Nickname</label>
-          <input type="text" name="nickname" id="nickname" ng-model="formData.nickname" class="form-control" required ng-minlength="6" placeholder="Enter your nickname">
-          <ng-messages for="myForm.nickname.$error" ng-if="myForm.nickname.$dirty" class="text-danger">
-            <ng-message when="required">The field is required</ng-message>
-            <ng-message when="minlength">The field must be minimum 10 characters</ng-message>
+      <h1>AngularJS Forms - Create new task</h1>
+      <form name="taskForm" novalidate>
+        <div class="form-group" ng-class="{'has-error': taskForm.title.$dirty && taskForm.title.$invalid}">
+          <label for="title">Title*</label>
+          <input type="text" ng-model="formData.title" required class="form-control" placeholder="Task title" name="title" id="title">
+          <ng-messages for="taskForm.title.$error" class="text-danger" ng-if="taskForm.title.$dirty">
+            <ng-message when="required">This field is required</ng-message>
           </ng-messages>
         </div>
-        <div class="form-group"  ng-class="{'has-error': myForm.email.$dirty && myForm.email.$invalid }">
-          <label for="email">Email</label>
-          <input required type="email" id="email" name="email" placeholder="Enter your email address" class="form-control" ng-model="formData.email">
-          <ng-messages for="myForm.email.$error" ng-if="myForm.email.$dirty"  class="text-danger">
-            <ng-message when="required">The field is required</ng-message>
-            <ng-message when="email">The field must be an email address</ng-message>
+        <div class="form-group" ng-class="{'has-error': taskForm.description.$dirty && taskForm.description.$invalid}">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" ng-model="formData.description" class="form-control"
+                    placeholder="Description" ng-maxlength="140">
+          </textarea>
+          <ng-messages for="taskForm.description.$error" class="text-danger" ng-if="taskForm.description.$dirty">
+            <ng-message when="maxlength">Maximum 140 characters</ng-message>
           </ng-messages>
-        </div>
-        <div class="form-group">
-          <label for="race">Choose your race</label>
-          <select ng-model="formData.race" ng-options="race for race in races" class="form-control" required id="race" name="race">
-          </select>
-        </div>
-        <div class="form-group">
-          <p><strong>Choose class</strong></p>
-          <label class="radio-inline">
-            <input type="radio" ng-model="formData.prof" name="inlineRadioOptions" id="inlineRadio" value="Mage"> Mage
-          </label>
-          <label class="radio-inline">
-            <input type="radio" ng-model="formData.prof" name="inlineRadioOptions" id="inlineRadio2" value="Warrior"> Warrior
-          </label>
-          <label class="radio-inline">
-            <input type="radio" ng-model="formData.prof" name="inlineRadioOptions" id="inlineRadio3" value="Priest"> Priest
-          </label>
         </div>
         <div>
-          <button class="btn btn-success btn-lg" ng-disabled="myForm.$invalid" ng-click="submit()">Create character</button>
+          <label for="dueDate">Select due date
+            <input type="checkbox" name="showDueDate" id="showDueDate" ng-model="formData.showDueDate">
+          </label>
+        </div>
+        <div class="form-group" ng-class="{'has-error': taskForm.dueDate.$dirty && taskForm.dueDate.$invalid}" ng-if="formData.showDueDate">
+          <label for="dueDate">Due date</label>
+          <input class="form-control" type="date" ng-model="formData.dueDate" name="dueDate" id="dueDate" min="{{today | date:'yyyy-MM-dd'}}">
+          <ng-messages for="taskForm.dueDate.$error" class="text-danger" ng-if="taskForm.dueDate.$dirty">
+            <ng-message when="min">Due date cannot be a past day.</ng-message>
+          </ng-messages>
+        </div>
+        <div>
+          <button class="btn btn-success btn-large" ng-disabled="taskForm.$invalid">Create task</button>
         </div>
       </form>
-      <div>
-        <p><strong>{{submitted}}</strong></p>
-      </div>
-
     </div>
   </div>
 </body>
