@@ -43,7 +43,10 @@
           </ng-messages>
         </div>
         <div>
-          <button class="btn btn-success btn-large" ng-disabled="taskForm.$invalid">Create task</button>
+          <button class="btn btn-success btn-large" ng-disabled="taskForm.$invalid" ng-click="createTask()">Create task</button>
+        </div>
+        <div class="text-success">
+          <span>{{task}}</span>
         </div>
       </form>
     </div>
