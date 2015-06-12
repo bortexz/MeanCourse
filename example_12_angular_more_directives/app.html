@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-messages.js"></script>
+  <script src="app.js"></script>
   <title>Extra directives</title>
 </head>
-<body ng-app>
-  <div class="container">
+<body ng-app="directives">
+  <div class="container" ng-controller="TasksController">
     <button class="btn btn-lg btn-info" ng-click="tab1=true; tab2=false;">
-      Tab 1
+      New task
     </button>
     <button class="btn btn-lg btn-success" ng-click="tab2=true; tab1=false;">
-      Tab 2
+      Tasks created
     </button>
     <div ng-show="tab1">
       <ng-include src="'tab1.html'"></ng-include>
