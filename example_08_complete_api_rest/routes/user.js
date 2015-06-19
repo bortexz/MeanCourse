@@ -9,7 +9,7 @@
 
 (function(){
   var userRouter = require('express').Router();
-  var tasksRouter = require('./tasks');
+  var express_jwt = require('express-jwt');
   var taskRouter = require('./task');
   var ObjectId = require('mongoose').Types.ObjectId;
   var bcrypt = require('bcrypt');
@@ -29,7 +29,7 @@
   /**
    * Function to change the password of the user.
    */
-  userRouter.patch('/:user_id', userCheck, function(req, res, next) {
+  userRouter.patch('/:user_id', express_jwt({secret: config.jwt_secret}), userCheck, function(req, res, next) {
     var oldPass = req.body.oldPassword;
     var newPass = req.body.newPassword;
     bcrypt.compare(oldPass, req.user.password, function(err, result){
@@ -53,7 +53,58 @@
     });
   });
 
-  userRouter.use('/:user_id/tasks', userCheck, tasksRouter);
+  userRouter.get('/', express_jwt({secret: config.jwt_secret}), function(req, res, next) {
+    if(req.user.is_admin) {
+      userModel.find({}, function(err, users) {
+        if(err) throw err;
+        else {
+          res.status(200).send(users);
+        }
+      })
+    } else {
+      res.status(401).send('You dont have access to this resource');
+    }
+  });
+
+  /**
+   * Create new user.
+   */
+  userRouter.post('/', function(req, res, next) {
+    //We use lodash to get the attributes that we wanted, and not let the user insert other data. (e.g. cannot let the
+    //user send is_admin = true;
+    var userData = _.pick(req.body, ['username', 'password']);
+    //If parameters exists
+    if(userData.username && userData.password) {
+      //We search for a user with that username, if exists return error
+      userModel.findOne({username: userData.username}, function(err, user) {
+        if(err) throw err;
+        else if(user) res.status(400).send("This username already exists");
+        else {
+          bcrypt.hash(userData.password, 12, function(err, hash) {
+            if(err) throw err;
+            else {
+              //We put the hash on the password field.
+              userData.password = hash;
+              var userDb = new usersModel(userData);
+              userDb.save(function(err, user) {
+                if(err) throw err;
+                else {
+                  //To object before sending it
+                  user = user.toObject();
+                  //Not sending the password back
+                  delete user.password;
+                  res.status(200).json(user);
+                }
+              });
+            }
+          });
+        }
+      });
+    } else {
+      res.status(400).send('The parameters are not correct');
+    }
+  });
+
   userRouter.use('/:user_id/task', userCheck, taskRouter);
 
   module.exports = userRouter;

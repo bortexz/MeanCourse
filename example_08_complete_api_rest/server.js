@@ -21,8 +21,7 @@ app.use(expressWinston.logger(config.winston_options));
 var usersRouter = require('./routes/users');
 var userRouter = require('./routes/user');
 
-app.use('/users', usersRouter);
-app.use('/user', express_jwt({secret: config.jwt_secret}) ,userRouter);
+app.use('/user' ,userRouter);
 
 var authenticationRouter = require('./routes/authentication');
 app.use('/authentication', authenticationRouter);
