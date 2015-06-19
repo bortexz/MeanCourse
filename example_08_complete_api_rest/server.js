@@ -17,8 +17,6 @@ app.use(bodyParser.json());
 //Middleware for log every request to the system.
 app.use(expressWinston.logger(config.winston_options));
 
-//In this example, we have separated the collection users, from the individual user.
-var usersRouter = require('./routes/users');
 var userRouter = require('./routes/user');
 
 app.use('/user' ,userRouter);

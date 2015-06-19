@@ -14,6 +14,7 @@
   var ObjectId = require('mongoose').Types.ObjectId;
   var bcrypt = require('bcrypt');
   var userModel = require('mongoose').model('User');
+  var config = require('../config');
 
   /**
    * Function that will check if the user logged is the same user as the parameter :id of the url.
