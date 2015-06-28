@@ -1,9 +1,0 @@
-{
-  "name": "express_with_mongoose_example",
-  "description": "Example showing routes with access to DB",
-  "dependencies": {
-    "body-parser": "^1.12.2",
-    "express": "^4.12.3",
-    "mongoose": "^4.0.1"
-  }
-}

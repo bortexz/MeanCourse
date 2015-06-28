@@ -1,8 +1,0 @@
-{
-  "name": "example_project",
-  "version": "0.0.1",
-  "description": "Project example",
-  "dependencies": {
-    "winston": "^0.9.0"
-  }
-}
