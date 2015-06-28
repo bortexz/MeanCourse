@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <title>AngularJS example 1</title>
+</head>
+<body ng-app>
+  <div class="container">
+    <h1>Angular introduction</h1>
+    <!-- NG-INIT and NG-BIND -->
+    <div>
+      <p ng-init="name='World'">Hello <span ng-bind="name"></span></p>
+    </div>
+    <!-- This is the same as the above -->
+    <div>
+      <p ng-init="name='World'">Hello {{name}}</p>
+    </div>
+
+    <!-- NG-MODEL -->
+    <div>
+      <form>
+        Write your name: <input type="text" ng-model="userinput">
+        <p>Your name is {{userinput}}.</p>
+      </form>
+    </div>
+
+    <!-- NG-REPEAT -->
+    <div ng-init="array=[1,2,3,5,8,13,21]">
+      List:
+      <span ng-repeat="num in array">{{num}}, </span>
+    </div>
+  </div>
+</body>
+</html>
