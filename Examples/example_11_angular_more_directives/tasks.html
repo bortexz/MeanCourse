@@ -1,0 +1,23 @@
+<div class="col-lg-4 container">
+  <h1>Angular directives</h1>
+  <div ng-controller="TasksController" ng-init="showEdit = false">
+    <h2>Task list</h2> <button class="btn btn-info" ng-click="showEdit = !showEdit">Edit</button>
+    <ul>
+      <li ng-repeat="task in taskslist track by $index">
+        <span>{{$index}} -> {{task}}</span>
+        <button class="btn btn-danger" ng-show="showEdit" ng-click="removeFromList($index)">Remove</button>
+      </li>
+    </ul>
+
+    <div ng-if="tasksremoved.length > 0">
+      <h2>Removed tasks</h2>
+      <li ng-repeat="task in tasksremoved track by $index">
+        <span>{{$index}} -> {{task}}</span>
+      </li>
+    </div>
+    <form>
+      <input type="text" placeholder="New task" ng-model="newTask">
+      <button class="btn btn-info" ng-click="addToList(newTask); newTask='';">New Task</button>
+    </form>
+  </div>
+</div>

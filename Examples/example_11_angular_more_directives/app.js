@@ -1,22 +1,23 @@
 /**
  * Created by alberto on 9/6/15.
  */
-angular.module('directives',['ngMessages']).controller('TasksController', TasksController);
+angular.module('directives',[]).controller('TasksController', TasksController);
 
 function TasksController($scope) {
-  $scope.formData = {
-    showDueDate: false
+  $scope.taskslist = [
+    'Call Saul get me out of prison',
+    'Sell the resting meth',
+    'Teach something to Jhon Snow'
+  ];
+
+  $scope.tasksremoved = [];
+
+  $scope.addToList = function(value) {
+    $scope.taskslist.push(value);
   };
 
-  $scope.today = new Date();
-
-  $scope.createTask = function() {
-    $scope.tasks.push({
-      title: $scope.formData.title,
-      description: $scope.formData.description,
-      dueDate: $scope.formData.dueDate ? $scope.formData.dueDate : null
-    });
+  $scope.removeFromList = function(index) {
+    var removed = $scope.taskslist.splice(index, 1);
+    $scope.tasksremoved.push(removed);
   };
-
-  $scope.tasks = [];
 }
