@@ -5,6 +5,8 @@ The purpouse of this exercise is to practice some MongoDB basic commands and to 
 First of all, download the folder of this example exercise_mongo_00/, and execute the following command line expression to import it:
 
     mongorestore .../exercise_mongo_00/
+    
+If this doesn't work, try with the option -d <name_of_db_to_import>
 
 Navigate over the db to see it's structure.
 
