@@ -1,4 +1,4 @@
-#Exercise 00 - MongoDB, Node.JS
+#Exercise 01 - MongoDB, Node.JS
 
 The jedi temple wants to register all the lightsabers in use, in order to have more control over all the lightsabers spread over the universe.
 
