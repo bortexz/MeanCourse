@@ -26,7 +26,7 @@ This is an example, feel free to put whatever you want!
 
 Watto asked us to write the API to interact with. He needs to do the following tasks over the two different resources:
 
-- Get a full list with id and type(pieces) or model(spacecrafts).
+- Get a full list with id and type(pieces) or model(spacecrafts). (See lodash library to pick only certain attributes of an object).
 - Get details (all parameters) of a resource by it's ID.
 - Create a new one of each (Check if all attributes are correct before inserting into DB!)
 - Modify a single resource.
