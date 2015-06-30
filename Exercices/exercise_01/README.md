@@ -26,7 +26,10 @@ Get lightsabers by color:
 ##Reading parameters
 To read the parameters of the url accessed, use the following code over request.url
 
-    require('url').parse('/status?name=ryan', true)
+    require('url').parse('/status?name=ryan', true);
+
+results in:
+
     {
         href: '/status?name=ryan',
         search: '?name=ryan',
@@ -72,3 +75,6 @@ Find:
     });
 
 For more info about the mongoDB node.js driver, go [here](https://mongodb.github.io/node-mongodb-native/api-articles/nodekoarticle1.html)
+
+##Returning JSON as result
+To return the JSON object returned from mongoDB, use JSON.stringify(result). It will format it as a string, and you will be able to return it with response.end();
