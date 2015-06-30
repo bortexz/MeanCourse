@@ -4,7 +4,7 @@ Watto, a toydarian with a store in Mos Espa, wants a program to register all his
 
 His second-hand goods can be of two different types, pieces and full spacecrafts.
 
-Of each of the types, we know for sure every resource has an ID. Each piece must have a type, and each spacecraft must have a model. The other attributes are optional. E.G, a piece could have this attributes:
+Of each type, we know for sure every resource has an ID. Each piece must have a type, and each spacecraft must have a model. The other attributes are optional. E.G, a piece could have these attributes:
 
     {
         _id: 'ObjectID',
@@ -27,7 +27,7 @@ This is an example, feel free to put whatever you want!
 Watto asked us to write the API to interact with. He needs to do the following tasks over the two different resources:
 
 - Get a full list with id and type(pieces) or model(spacecrafts). (See lodash library to pick only certain attributes of an object).
-- Get details (all parameters) of a resource by it's ID.
+- Get details (all parameters) of a resource through it's ID.
 - Create a new one of each (Check if all attributes are correct before inserting into DB!)
 - Modify a single resource.
 - Delete a single resource.
