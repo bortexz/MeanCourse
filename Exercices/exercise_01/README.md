@@ -65,13 +65,13 @@ Get collections:
 Insert:
 
     collection.insert(/*Obj or array of objects to inset*/{}, function(err, result){
-
+        //results.ops return the objects inserted with their new _id field.
     });
 
 Find:
 
     collection.find({name: 'first user'}).toArray(function (err, result) {
-
+        
     });
 
 For more info about the mongoDB node.js driver, go [here](https://mongodb.github.io/node-mongodb-native/api-articles/nodekoarticle1.html)

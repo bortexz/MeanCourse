@@ -35,16 +35,16 @@ Watto asked us to write the API to interact with. He needs to do the following t
 ##Dealing with ID's
 The _id attribute is generated automatically by MongoDB when we insert some document. When in function(err, result) we access result.ops, we can see the inserted documents with the corresponding _id generated.
 
-The ObjectID has a format unreadable, so it's important to switch from it's HEX string version and the original ObjectID format. Let's see how we can do this:
+Note that, when we do
 
-To access ObjectID:
+    find({}).toArray(function(err, result){
 
-    var object_id = require('mongodb').ObjectID;
+    })
 
-To transform to string:
+Also, when we insert and access:
 
-    _id.toHexString();
+    result.ops
 
-To convert from string:
+The result is also with ID's in string format.
 
-    new object_id(hexstring);
+But don't forget, a _id is of format ObjectID of bson, if you ever find your ID in ObjectID format, see [these docs](https://mongodb.github.io/node-mongodb-native/api-bson-generated/objectid.html) to transform between string and ObjectID.
