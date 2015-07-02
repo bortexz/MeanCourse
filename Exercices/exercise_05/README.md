@@ -53,6 +53,7 @@ Gates:
         floor: Number,
         accessto: String,
         access_code: String,
+        rank: [String],
         craftworld: ObjectID (Ref: Craftworld)
     }
 
