@@ -19,7 +19,7 @@ The relations are the following:
 - Gates has an Array of ranks that have access. E.g ['warklock', 'commander'].
 
 ##Admin
-The admin is the only rank that can create a new Craftworld. Also, **the admin has the authority to promote a warlock or a soldier to commander**. It's also the responsible of creating/deleting/modifying **new resources as books, weapons or gates**. The admin user is provided in the sample DB.
+The admin is the only rank that can create a new Craftworld. Also, **the admin has the authority to promote a warlock or a soldier to commander**. It's also the responsible of creating/deleting/modifying **new resources as books, weapons or gates**.
 
 ##Register
 In the register process, an eldar must specify the CraftWorld to which he or she wants to belong. This can be made by the name of the CraftWorld or it's ID (Use only one for simplicity if you want). If the Craftworld doesn't exist, then an error is returned.
