@@ -6,11 +6,13 @@ function Config($stateProvider, $urlRouterProvider) {
 
         .state('newtask', {
             url: '/newtask',
-            templateUrl: 'newtask.html'
+            templateUrl: 'templates/newtask.html',
+            controller: 'NewTaskController'
         })
         .state('taskslist', {
             url:'/taskslist',
-            temapleteUrl: 'taskslist.html'
+            templateUrl: 'templates/taskslist.html',
+            controller: 'TasksListController'
         });
         
     $urlRouterProvider.otherwise('/newtask');

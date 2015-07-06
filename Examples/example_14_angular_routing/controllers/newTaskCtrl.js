@@ -1,20 +1,18 @@
-angular.module('routing').controller('TasksController', TasksController);
+angular.module('routing').controller('NewTaskController', NewTaskController);
 
-function TasksController($scope) {
+function NewTaskController($scope, $rootScope) {
     $scope.formData = {
       showDueDate: false
     };
     $scope.today = new Date();
-
-    //Tasks
-    $scope.taskslist = [];
     $scope.createTask = function() {
       var newTask = {
         title: $scope.formData.title,
         description: $scope.formData.description,
         dueDate: $scope.formData.dueDate
       };
-      $scope.taskslist.push(newTask);
+      $rootScope.taskslist.push(newTask);
     };
-    $scope.search = {};
+
+    if(!$rootScope.taskslist) $rootScope.taskslist = [];
 }
