@@ -1,5 +1,17 @@
-angular.module('routing', ['ui.router']).config(Config);
+angular.module('routing', ['ui.router', 'ngMessages']).config(Config);
 
-var Config = function() {
+function Config($stateProvider, $urlRouterProvider) {
 
-};
+    $stateProvider
+
+        .state('newtask', {
+            url: '/newtask',
+            templateUrl: 'newtask.html'
+        })
+        .state('taskslist', {
+            url:'/taskslist',
+            temapleteUrl: 'taskslist.html'
+        });
+        
+    $urlRouterProvider.otherwise('/newtask');
+}
