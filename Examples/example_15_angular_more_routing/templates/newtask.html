@@ -1,4 +1,5 @@
-<div class="col-lg-4" ng-controller="CreateTasksController">
+<div class="col-lg-4">
+  <h2>Create new task</h2>
   <form name="taskForm" novalidate>
     <div class="form-group" ng-class="{'has-error': taskForm.title.$dirty && taskForm.title.$invalid}">
       <label for="title">Title*</label>
@@ -9,9 +10,9 @@
     </div>
     <div class="form-group" ng-class="{'has-error': taskForm.description.$dirty && taskForm.description.$invalid}">
       <label for="description">Description</label>
-          <textarea id="description" name="description" ng-model="formData.description" class="form-control"
-                    placeholder="Description" ng-maxlength="140">
-          </textarea>
+        <textarea id="description" name="description" ng-model="formData.description" class="form-control"
+                  placeholder="Description" ng-maxlength="140">
+        </textarea>
       <ng-messages for="taskForm.description.$error" class="text-danger" ng-if="taskForm.description.$dirty">
         <ng-message when="maxlength">Maximum 140 characters</ng-message>
       </ng-messages>
@@ -29,7 +30,7 @@
       </ng-messages>
     </div>
     <div>
-      <button class="btn btn-success btn-large" ng-disabled="taskForm.$invalid" ng-click="createTask();tab2=true;tab1=false;">Create task</button>
+      <button class="btn btn-success btn-large" ng-disabled="taskForm.$invalid" ng-click="createTask()">Create task</button>
     </div>
     <div class="text-success">
       <span>{{task}}</span>

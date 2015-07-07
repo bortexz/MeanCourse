@@ -8,6 +8,7 @@
   </div>
   <label>Tasks</label>
   <div ng-repeat="task in taskslist | orderBy:'-dueDate' | filter:search.search">
-    <a ui-sref="taskslist.single"><h3>{{task.title}}</h3></a>
+    <a ui-sref="taskslist.single({task_title: task.title})"><h3>{{task.title}}</h3></a>
   </div>
 </div>
+<div ui-view class="col-lg-4"></div>

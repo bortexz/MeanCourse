@@ -13,6 +13,10 @@ function Config($stateProvider, $urlRouterProvider) {
       url: '/taskslist',
       templateUrl: 'templates/taskslist.html',
       controller: 'TasksListController'
+    }).state('taskslist.single', {
+      url: '/:task_title',
+      templateUrl: 'templates/singletask.html',
+      controller:'SingleTaskController'
     });
   $urlRouterProvider.otherwise('/newtask');
 }
