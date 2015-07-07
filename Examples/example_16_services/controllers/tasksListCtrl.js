@@ -1,9 +1,9 @@
 /**
  * Created by alberto on 6/7/15.
  */
-angular.module('routing').controller('TasksListController', TasksListController);
+angular.module('services').controller('TasksListController', TasksListController);
 
-function TasksListController($scope, $rootScope) {
+function TasksListController($scope, tasksService) {
   $scope.search = {};
-  $scope.taskslist = $rootScope.taskslist;
+  $scope.taskslist = tasksService.tasks;
 }

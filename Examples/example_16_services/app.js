@@ -1,4 +1,4 @@
-angular.module('routing', ['ui.router', 'ngMessages']).config(Config);
+angular.module('services', ['ui.router', 'ngMessages']).config(Config);
 
 function Config($stateProvider, $urlRouterProvider) {
 
@@ -16,7 +16,7 @@ function Config($stateProvider, $urlRouterProvider) {
     }).state('taskslist.single', {
       url: '/:task_title',
       templateUrl: 'templates/singletask.html',
-      controller:'SingleTaskController'
+      controller: 'SingleTaskController'
     });
   $urlRouterProvider.otherwise('/newtask');
 }

@@ -10,21 +10,22 @@
   <script src="controllers/newTaskCtrl.js"></script>
   <script src="controllers/tasksListCtrl.js"></script>
   <script src="controllers/singleTaskCtrl.js"></script>
+  <script src="services/tasks.js"></script>
   <meta charset="UTF-8">
   <title>Angular routing</title>
 </head>
-<body ng-app="routing">
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a ui-sref="newtask">New Task</a></li>
-            <li><a ui-sref="taskslist">Tasks List</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div ui-view></div>
-    </div>
+<body ng-app="services">
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a ui-sref="newtask">New Task</a></li>
+    <li><a ui-sref="taskslist">Tasks List</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div ui-view></div>
+</div>
 </body>
 </html>

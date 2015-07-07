@@ -7,6 +7,7 @@
     <input type="text" ng-model="search.search" class="form-control" placeholder="Search" name="search" id="search">
   </div>
   <label>Tasks</label>
+
   <div ng-repeat="task in taskslist | orderBy:'-dueDate' | filter:search.search">
     <a ui-sref="taskslist.single({task_title: task.title})"><h3>{{task.title}}</h3></a>
   </div>
