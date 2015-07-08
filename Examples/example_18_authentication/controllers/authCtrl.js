@@ -7,7 +7,7 @@ function AuthController($scope, AuthService, $state) {
     AuthService.login($scope.loginData.username, $scope.loginData.password).then(function() {
       $state.go('taskslist');
     }, function() {
-      console.log('FFAILED');
+      console.log('fail');
     });
   }
 }

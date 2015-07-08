@@ -3,7 +3,7 @@
  */
 angular.module('services').controller('TasksListController', TasksListController);
 
-function TasksController($scope, tasksService) {
+function TasksListController($scope, tasksService) {
   $scope.search = {};
 
   tasksService.getTasks().then(function(data){

@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var mongoose = require('mongoose');
 var models = require('./models');
-var cors = require('cors');
+
 
 //Mongoose connect to database.
 mongoose.connect('mongodb://localhost/example_06');
@@ -12,6 +12,8 @@ mongoose.connect('mongodb://localhost/example_06');
 models.initialize();
 
 var app = express();
+
+var cors = require('cors');
 app.use(cors());
 app.use(bodyParser.json());
 
