@@ -1,0 +1,15 @@
+<div class="col-lg-4">
+
+  <h2>Taskslist</h2>
+
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input type="text" ng-model="search.search" class="form-control" placeholder="Search" name="search" id="search">
+  </div>
+  <label>Tasks</label>
+
+  <div ng-repeat="task in taskslist | orderBy:'-dueDate' | filter:search.search">
+    <a ui-sref="taskslist.single({id: task._id})"><h3>{{task.title}}</h3></a>
+  </div>
+</div>
+<div ui-view class="col-lg-4"></div>

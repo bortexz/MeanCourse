@@ -15,7 +15,7 @@
   var bcrypt = require('bcrypt');
   var userModel = require('mongoose').model('User');
   var config = require('../config');
-
+  var _ = require('lodash');
   /**
    * Function that will check if the user logged is the same user as the parameter :id of the url.
    */
@@ -86,7 +86,7 @@
             else {
               //We put the hash on the password field.
               userData.password = hash;
-              var userDb = new usersModel(userData);
+              var userDb = new userModel(userData);
               userDb.save(function(err, user) {
                 if(err) throw err;
                 else {

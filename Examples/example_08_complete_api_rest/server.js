@@ -5,6 +5,7 @@ var expressWinston = require('express-winston');
 var http = require('http');
 var config = require('./config');
 var express_jwt = require('express-jwt');
+var cors = require('cors');
 
 var app = express();
 //mongoose
@@ -13,6 +14,7 @@ var mongoose = require('mongoose');
 mongoose.connect(config.db_path);
 //This middleware allow us to treat the body of the request as a json object.
 app.use(bodyParser.json());
+app.use(cors());
 
 //Middleware for log every request to the system.
 app.use(expressWinston.logger(config.winston_options));
