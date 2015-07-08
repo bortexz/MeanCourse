@@ -1,0 +1,13 @@
+<div>
+  <h2>{{task.title}}</h2>
+
+  <div>
+    <p>{{task.description}}</p>
+  </div>
+  <div>
+    {{task.dueDate | date: 'dd-MM-yyyy'}}
+  </div>
+  <button class="btn btn-danger" ng-click="deleteTask()">Delete Task</button>
+</div>
+
+

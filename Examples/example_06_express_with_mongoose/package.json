@@ -3,6 +3,7 @@
   "description": "Example showing routes with access to DB",
   "dependencies": {
     "body-parser": "^1.12.2",
+    "cors": "^2.7.1",
     "express": "^4.12.3",
     "mongoose": "^4.0.1"
   }

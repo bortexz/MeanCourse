@@ -1,6 +1,6 @@
 angular.module('services').factory('tasksService', tasksService);
 
-function tasksService() {
+function tasksService($http) {
   var taskslist = [];
 
   var addTask = function(task) {

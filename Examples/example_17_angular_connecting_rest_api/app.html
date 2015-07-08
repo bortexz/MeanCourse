@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-messages.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
+  <script src='app.js'></script>
+  <script src="controllers/newTaskCtrl.js"></script>
+  <script src="controllers/tasksListCtrl.js"></script>
+  <script src="controllers/singleTaskCtrl.js"></script>
+  <script src="services/tasks.js"></script>
+  <meta charset="UTF-8">
+  <title>Angular routing</title>
+</head>
+<body ng-app="services">
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="navbar-header">
+    <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a ui-sref="newtask">New Task</a></li>
+    <li><a ui-sref="taskslist">Tasks List</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div ui-view></div>
+</div>
+</body>
+</html>
