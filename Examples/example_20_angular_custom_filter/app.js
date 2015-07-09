@@ -12,7 +12,7 @@ function ItemListController($scope) {
       stock: 5
     },
     {
-      name:'xbnox',
+      name:'xbox',
       category: 'consoles',
       price: 300,
       stock: 8
