@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="filters.js"></script>
+  <title>Filters - AngularJS</title>
+</head>
+<body ng-app="filters">
+
+  <div class="container" ng-controller="ItemListController">
+    <div class="col-md-3">
+      <ul> Categories
+        <li ng-repeat="item in items | orderBy:'category' | unique:'category'">
+          <button ng-click="selectCategory(item)">{{item}}</button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
+      <div ng-repeat="item in items | filter: categoryFilter">
+        <p>Name: {{item.name}}</p>
+        <p>Price: {{item.price}}</p>
+        <p>Stock: {{item.stock}}</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
