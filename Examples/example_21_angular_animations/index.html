@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- CSS -->
+	<!-- load bootstrap (bootswatch version) -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+
+	<!-- JS -->
+	<!-- load angular, ngRoute, ngAnimate -->
+	<script src="http://code.angularjs.org/1.4.0/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-animate.js"></script>
+	<script src="app.js"></script>
+
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="animateApp">
+
+    <!-- inject our views using ng-view -->
+	<!-- each angular controller applies a different class here -->
+	<div class="page {{ pageClass }}" ui-view></div>
+
+		<div ng-include src="'navbar.html'"></div>
+
+</body>
+</html>
