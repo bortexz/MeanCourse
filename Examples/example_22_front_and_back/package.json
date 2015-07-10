@@ -1,0 +1,17 @@
+{
+  "name": "example_08_complete_api_rest",
+  "description": "full api for use with an angular frontend",
+  "dependencies": {
+    "bcrypt": "^0.8.2",
+    "body-parser": "^1.12.3",
+    "cors": "^2.7.1",
+    "express": "^4.12.3",
+    "express-jwt": "^3.0.0",
+    "express-winston": "^0.3.0",
+    "jsonwebtoken": "^5.0.0",
+    "lodash": "^3.7.0",
+    "mongoose": "^4.0.2",
+    "owasp-password-strength-test": "^1.2.2",
+    "winston": "^1.0.0"
+  }
+}
