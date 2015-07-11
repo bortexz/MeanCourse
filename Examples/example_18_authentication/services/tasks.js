@@ -1,7 +1,7 @@
 angular.module('services').factory('tasksService', tasksService);
 
 function tasksService($http, $q, AuthService) {
-  var SERVER_URL = 'http://localhost:8080/';
+  var SERVER_URL = 'http://localhost:8080/task/';
 
   function getTasks() {
     var q = $q.defer();
@@ -24,7 +24,7 @@ function tasksService($http, $q, AuthService) {
     $http.post(SERVER_URL, newTask).then(function(data){
       q.resolve(data)
     }, function(){
-      q.reject(data);
+      q.reject();
     });
     return q.promise;
   }
