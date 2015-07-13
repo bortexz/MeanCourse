@@ -63,7 +63,12 @@
         }
       })
     } else {
-      res.status(401).send('You dont have access to this resource');
+      userModel.findOne({_id: req.user._id}, function(err, user) {
+        if(err) throw err;
+        else {
+          res.status(200).send(user);
+        }
+      })
     }
   });
 
@@ -106,7 +111,7 @@
     }
   });
 
-  userRouter.use('/:user_id/task', userCheck, taskRouter);
+  userRouter.use('/:user_id/task', express_jwt({secret: config.jwt_secret}), userCheck, taskRouter);
 
   module.exports = userRouter;
 })();

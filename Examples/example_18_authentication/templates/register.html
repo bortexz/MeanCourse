@@ -1,0 +1,19 @@
+<form name="registerForm">
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" ng-model="formData.username" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" ng-model="formData.password" class="form-control">
+  </div>
+
+  <div class="form-group" ng-class="{'has-error': !equalPasswords() && registerForm.retypepass.$dirty}">
+    <label for="retypepass">Retype password</label>
+    <input type="password" id="retypepass" name="retypepass" ng-model="formData.retypepass" class="form-control">
+  </div>
+  <div ng-show="!equalPasswords() && registerForm.retypepass.$dirty" class="text-danger">Passwords are different</div>
+
+  <button class="btn btn-success" ng-click="register()">Login</button>
+</form>

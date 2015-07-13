@@ -6,36 +6,42 @@ function tasksService($http, $q, AuthService) {
   function getTasks() {
     var q = $q.defer();
 
-    if(AuthService.user) {
-      console.log(AuthService.getUser());
-      $http.get(SERVER_URL + 'user/' + AuthService.getUser().user._id + '/task').then(function(data){
-        q.resolve(data);
-      }, function(){
-        q.reject();
-      });
-    } else {
-      q.reject();
-    }
+    AuthService.getUser().then(function(user){
+      return $http.get(SERVER_URL + 'user/' + user.data._id + '/task');
+    }).then(function(data) {
+      q.resolve(data);
+    }, function(err) {
+      q.reject(err);
+    });
+
     return q.promise;
   }
 
   function addTask(newTask) {
     var q = $q.defer();
-    $http.post(SERVER_URL, newTask).then(function(data){
-      q.resolve(data)
-    }, function(){
-      q.reject();
+
+    AuthService.getUser().then(function(user){
+      return $http.post(SERVER_URL + 'user/' + user.data._id + '/task', newTask);
+    }).then(function(data) {
+      q.resolve(data);
+    }, function(err) {
+      q.reject(err);
     });
+
     return q.promise;
   }
 
   function removeTask(id) {
     var q = $q.defer();
-    $http.delete(SERVER_URL + id).then(function(data){
+
+    AuthService.getUser().then(function(user){
+      return $http.delete(SERVER_URL + 'user/' + user.data._id + '/task/' + id);
+    }).then(function(data) {
       q.resolve(data);
-    }, function(data) {
-      q.reject(data);
+    }, function(err) {
+      q.reject(err);
     });
+
     return q.promise;
   }
 

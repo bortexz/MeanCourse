@@ -13,19 +13,27 @@
   <script src="services/tasks.js"></script>
 
   <script src="interceptor/authInterceptor.js"></script>
-  <script src="controllers/authCtrl.js"></script>
+  <script src="controllers/loginCtrl.js"></script>
+  <script src="controllers/registerCtrl.js"></script>
+  <script src="controllers/navBarCtrl.js"></script>
   <script src="services/auth.js"></script>
   <meta charset="UTF-8">
   <title>Angular routing</title>
 </head>
 <body ng-app="services">
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation" ng-controller="NavBarController">
   <div class="navbar-header">
     <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
   </div>
   <ul class="nav navbar-nav">
-    <li><a ui-sref="newtask">New Task</a></li>
-    <li><a ui-sref="taskslist">Tasks List</a></li>
+    <li><a ui-sref="newtask" ng-show="user.loggedIn">New Task</a></li>
+    <li><a ui-sref="taskslist" ng-show="user.loggedIn">Tasks List</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a ui-sref="login" ng-hide="user.loggedIn">Login</a></li>
+    <li><a ui-sref="register" ng-hide="user.loggedIn">Register</a></li>
+    <li ng-show="user.loggedIn"><a>{{user.data.username}}</a></li>
+    <li><a ng-click="logout()" class="pointer" ng-show="user.loggedIn">Logout</a></li>
   </ul>
 </nav>
 <div class="container">
