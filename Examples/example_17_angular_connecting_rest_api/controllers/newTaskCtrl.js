@@ -11,12 +11,15 @@ function NewTaskController($scope, tasksService, $state) {
       description: $scope.formData.description,
       dueDate: $scope.formData.dueDate
     };
-    tasksService.addTask(newTask);
+    tasksService.addTask(newTask).then(function(data){
+      $state.go('taskslist', {}, {reload : true});
+    }, function(err){
+      console.log('Error adding task');
+    });
 
     $scope.formData = {
       showDueDate: $scope.formData.showDueDate
     };
     $scope.taskForm.$setPristine();
-    $state.go('taskslist', {}, {reload : true});
   };
 }
